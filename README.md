@@ -11,13 +11,15 @@ To analyse CSI data, please see: https://github.com/DWER-WA/CSI-DataAnalysis
 
 # How to Cite
 When using WA CSI data, projections, or materials in publications, reports, or analyses, cite as follows:
- - Kala Jatin, J. Andrys, H.S. Lam, J. Lingala, M.O. Mughal, K. Wamahiu (Under review) Design and Evaluation of the Western Australian Climate Science Initiative (CSIv1.0) CMIP6 and ERA5 driven convection permitting regional climate model simulations for southwest Western Australia, Geoscientific Model Development, DOI: (TBC) 
+ - Kala et al. (2026) Design and Evaluation of the Western Australian Climate Science Initiative (CSIv1.0) CMIP6 and ERA5 driven convection permitting regional climate model simulations for southwest Western Australia, Geoscientific Model Development Discussions, DOI: (TBC) 
  - Government of Western Australia, Department of Water and Environmental Regulation, Climate Science Initiative and WA climate projections. (http://doi.org/10.25914/3jys-sb70).
 
 # Acknowledgement:
-We acknowledge:
-- The Climate Adaptation Fund; and
-- NSW Government (DCCEEW), Murdoch University, and Pawsey Supercomputing Research Centre.
+CSI is supported by:
+- The Climate Adaptation Fund of the Western Australian Government
+- The Climate and Atmospheric Science Branch, Science, Economics and Insights Division Department of Climate Change, Energy, the Environment and Water, NSW Government (DCCEEW), New South Wales and Australian Regional Climate Modelling (NARCliM) team
+- The Pawsey Supercomputing Research Centre, Western Australia
+- Murdoch University, Perth, Western Australia
 
 Always check the latest data portal or factsheets for any updated citation/licensing notes when the full dataset becomes publicly available (e.g. via NCI or WA data catalogues).
 Related Resources
