@@ -27,11 +27,46 @@ For general information and frequently asked questions, see the official WA CSI 
 | **Spatial domain** | Southwest Western Australia |
 | **Horizontal resolution** | ~4 km (convection-permitting) |
 | **Regional climate model** | WRF (Weather Research and Forecasting) |
-| **Driving data** | CMIP6 GCMs|
+| **Driving data** | CMIP6 GCMs (ACCESS-ESM1-5, EC-Earth3-Veg, MPI-ESM1-2-HR, NorESM2-MM and UKESM1-0-LL|
 | **Emissions scenarios** | SSP1-2.6 (low), SSP2-4.5 (medium) SSP3-7.0 (high) |
-| **Historical period** | 1960–2014 (model) |
+| **Historical period** | 1951–2014 (model) |
 | **Future period** | 2015–2100 |
 | **Output format** | NetCDF-4 |
+
+---
+
+## Model Ensemble
+
+CSI uses five CMIP6 global climate models (GCMs) dynamically downscaled using two configurations of the Weather Research and Forecasting (WRF) model v4.12, producing a 10-member ensemble. The two RCM configurations (R3 and R5) differ only in their planetary boundary layer (PBL) scheme; R5 produces slightly warmer hindcasts and projections than R3.
+
+GCM selection follows the methodology outlined in Di Virgilio et al. (2022): [https://doi.org/10.1029/2021EF002625](https://doi.org/10.1029/2021EF002625)
+
+### Driving GCMs
+
+| GCM (`driving_source_id`) | Variant (`driving_variant_label`) | GCM calendar | Atmosphere lat/lon grid (°) | Experiments | Time period |
+|---|---|---|---|---|---|
+| ACCESS-ESM1-5 | r6i1p1f1 | standard | 1.2 × 1.8 | ssp126, ssp245, ssp370, historical | 2015–2100 / 1951–2014 |
+| EC-Earth3-Veg | r1i1p1f1 | standard | 0.7 × 0.7 | ssp126, ssp245, ssp370, historical | 2015–2100 / 1951–2014 |
+| MPI-ESM1-2-HR | r1i1p1f1 | standard | ~0.9 | ssp126, ssp245, ssp370, historical | 2015–2100 / 1951–2014 |
+| NorESM2-MM | r1i1p1f1 | 365_day | 0.9 × 0.9 | ssp126, ssp245, ssp370, historical | 2015–2100 / 1951–2014 |
+| UKESM1-0-LL | r1i1p1f2 | 360_day | 1.3 × 1.9 | ssp126, ssp245, ssp370, historical | 2015–2100 / 1951–2014 |
+
+> **Note:** The NorESM2-MM driving model uses a 365-day no-leap-year calendar, UKESM1-0-LL uses a 360-day calendar, and the remaining three GCMs use a regular leap-year calendar. This affects filename date conventions (see [Data Organisation](#data-organisation)).
+
+### Regional Climate Models
+
+Each GCM is downscaled with both RCM configurations, producing 10 ensemble members in total.
+
+| RCM (`source_id`) | PBL scheme | Vertical levels |
+|---|---|---|
+| `CSI-WRF412R3` | MYNN2 | 45 |
+| `CSI-WRF412R5` | ACM2 | 45 |
+
+Both RCMs use the Thompson microphysics scheme, Betts-Miller-Janjic cumulus physics, RRTMG shortwave/longwave radiation, and Noah-MP land surface with dynamic vegetation.
+
+### ERA5-driven evaluation runs
+
+In addition to GCM-driven projections, ERA5 reanalysis-driven simulations are provided for the historical period to support model evaluation.
 
 ---
 
@@ -72,11 +107,17 @@ CSI projection data are archived at the National Computational Infrastructure (N
 
 ### NCI Users
 
-To access CSI data from NCI's Gadi or via the [ARE interface](https://opus.nci.org.au/display/Help/ARE+User+Guide), you must first apply for access to the relevant NCI project via [my.nci.org.au](https://my.nci.org.au). Browse available files via the NCI Data Catalogue linked above.
+To access CSI data from NCI's Gadi or via the [ARE interface](https://opus.nci.org.au/display/Help/ARE+User+Guide), apply for access to project `kr82` via [my.nci.org.au](https://my.nci.org.au). Data are located at:
+
+```
+/g/data/kr82/CSI/output-CMIP6/DD/
+```
 
 ### Non-NCI Users
 
-Data may be accessed via the NCI THREDDS Data Server — links are available from the NCI Data Catalogue record above.
+Data can be browsed and downloaded without an NCI account via the THREDDS Data Server:
+
+**https://thredds.nci.org.au/thredds/catalog/kr82/CSI/output-CMIP6/DD/catalog.html**
 
 ---
 
@@ -90,27 +131,57 @@ Worked examples, notebooks, and analysis tools for working with CSI data are ava
 
 ## Data Organisation
 
-CSI data at NCI follows a hierarchical directory structure:
+CSI data at NCI (project `kr82`) is organised following CORDEX-CMIP6 directory conventions. The base path on NCI Gadi is:
 
 ```
-<project>/
-└── <domain>/
-    └── <institution_id>/
-        └── <driving_source_id>/
-            └── <driving_experiment_id>/
-                └── <driving_variant_label>/
-                    └── <source_id>/
-                        └── <version_realisation>/
-                            └── <freq>/
-                                └── <variable_id>/
-                                    └── <version>/
+/g/data/kr82/CSI/output-CMIP6/DD/
+```
+
+The full directory structure is:
+
+```
+/g/data/kr82/CSI/output-CMIP6/DD/
+└── <domain_id>/                       e.g. SWWA-04
+    └── <institution_id>/              e.g. DWER-MU
+        └── <driving_source_id>/       e.g. ACCESS-ESM1-5
+            └── <driving_experiment_id>/   e.g. ssp370
+                └── <driving_variant_label>/   e.g. r6i1p1f1
+                    └── <source_id>/       e.g. CSI-WRF412R3
+                        └── <version_realisation>/   e.g. v1-r1
+                            └── <freq>/    e.g. day
+                                └── <variable_id>/   e.g. tasmax
+                                    └── <version>/   e.g. v20260127
                                         └── <netcdf_filename>.nc
 ```
 
-Where:
-- `<driving_experiment_id>` is `historical`, `ssp126`, or `ssp370`
-- `<freq>` is `day` or `mon` (daily or monthly)
-- `<variable_id>` follows CF/CMIP conventions (e.g. `tasmax`, `pr`)
+### Directory component reference
+
+| Component | Example(s) | Notes |
+|---|---|---|
+| `domain_id` | `SWWA-04` | Southwest Western Australia at 4 km resolution |
+| `institution_id` | `DWER-MU` | Dept. of Water and Environmental Regulation & Murdoch University |
+| `driving_source_id` | `ACCESS-ESM1-5`, `EC-Earth3-Veg`, `MPI-ESM1-2-HR`, `NorESM2-MM`, `UKESM1-0-LL` | Driving GCM |
+| `driving_experiment_id` | `historical`, `ssp126`, `ssp370` | Historical (1960–2014); SSP1-2.6 and SSP3-7.0 (2015–2100) |
+| `driving_variant_label` | `r6i1p1f1`, `r1i1p1f1`, `r1i1p1f2` | See model ensemble table above |
+| `source_id` | `CSI-WRF412R3`, `CSI-WRF412R5` | The two WRF RCM configurations |
+| `version_realisation` | `v1-r1` | Version and realisation of the simulation |
+| `freq` | `day`, `mon` | Daily or monthly output |
+| `variable_id` | `tasmax`, `pr`, `hurs`, etc. | CF/CMIP variable name — see variable table above |
+| `version` | `v20260127` | Data version date (YYYYMMDD); use `latest` symlink for most recent |
+
+### Example full path
+
+```
+/g/data/kr82/CSI/output-CMIP6/DD/SWWA-04/DWER-MU/ACCESS-ESM1-5/ssp370/r6i1p1f1/CSI-WRF412R3/v1-r1/day/tasmax/v20260127/
+```
+
+### THREDDS access
+
+Data can also be browsed and accessed without an NCI account via the THREDDS Data Server:
+
+```
+https://thredds.nci.org.au/thredds/catalog/kr82/CSI/output-CMIP6/DD/catalog.html
+```
 
 ---
 
