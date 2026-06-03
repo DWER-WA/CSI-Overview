@@ -69,7 +69,7 @@ In addition to GCM-driven projections, ERA5 reanalysis-driven simulations are pr
 
 ## Output Variables
 
-CSI outputs the [CORDEX core variable list](https://is-enes-data.github.io/CORDEX_IS-ENES_Variables_v1.pdf) with the cloud area fraction (`clt`) in pending. Output frequencies are **daily** and **monthly** only.
+CSI outputs the [CORDEX core variable list](https://github.com/WCRP-CORDEX/data-request-table/blob/main/data-request/dreq_default.csv) with the cloud area fraction (`clt`) in pending. Output frequencies are **daily** and **monthly** only.
 
 | Variable | Units | Long name | CF Standard name | Monthly | Daily |
 |---|---|---|---|:---:|:---:|
