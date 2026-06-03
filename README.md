@@ -88,7 +88,6 @@ CSI outputs the [CORDEX core variable list](https://is-enes-data.github.io/CORDE
 | `sfcWind` | m s⁻¹ | Near-Surface Wind Speed | `wind_speed` | ✓ | ✓ |
 | `uas` | m s⁻¹ | Eastward Near-Surface Wind | `eastward_wind` | ✓ | ✓ |
 | `vas` | m s⁻¹ | Northward Near-Surface Wind | `northward_wind` | ✓ | ✓ |
-| `cli` | 1 | Total Cloud Ice Area Fraction | `cloud_area_fraction` | ✓ | ✓ |
 | `rsds` | W m⁻² | Surface Downwelling Shortwave Radiation | `surface_downwelling_shortwave_flux_in_air` | ✓ | ✓ |
 | `rlds` | W m⁻² | Surface Downwelling Longwave Radiation | `surface_downwelling_longwave_flux_in_air` | ✓ | ✓ |
 | `orog` | m | Surface Altitude | `surface_altitude` | — | fx |
