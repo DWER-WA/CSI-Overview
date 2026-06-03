@@ -12,10 +12,9 @@ This GitHub organisation hosts modelling workflows, data processing tools, evalu
 
 WA CSI develops detailed, WA-specific climate change projections to help government, industry, and communities understand and plan for future climate risks, extremes, and impacts.
 
-Projections are produced using [convection-permitting regional climate models (RCMs) run at 4 km resolution](https://www.wa.gov.au/government/publications/convection-permitting-models-factsheet) over Southwest Western Australia, driven by a selection of [CMIP6 global climate models (GCMs)](https://pcmdi.llnl.gov/CMIP6/) under two emissions scenarios: a low-emissions pathway (SSP1-2.6), medium-emissions pathway (SSP2-4.5) and a high-emissions pathway (SSP3-7.0).
+Projections are produced using [convection-permitting regional climate models (RCMs) run at 4 km resolution](https://www.wa.gov.au/government/publications/convection-permitting-models-factsheet) over Southwest Western Australia, driven by a selection of [CMIP6 global climate models (GCMs)](https://pcmdi.llnl.gov/CMIP6/) under two emissions scenarios: a low-emissions pathway (SSP1-2.6), medium-emissions pathway (SSP2-4.5) and a high-emissions pathway (SSP3-7.0). For more information about SSPs, please refer to this [explainer from NESP](https://nesp2climate.com.au/wp-content/uploads/2024/01/Understanding-SSPs-1.pdf) and for more technical information refer to the [Riahi et al. (2017) journal publication](https://www.sciencedirect.com/science/article/pii/S0959378016300681).
 
-For general information and frequently asked questions, see the official WA CSI page:  
-**https://www.wa.gov.au/service/environment/environment-information-services/climate-science-initiative-frequently-asked-questions**
+For general information and frequently asked questions, see the [official WA CSI page](https://www.wa.gov.au/service/environment/environment-information-services/climate-science-initiative-frequently-asked-questions)
 
 ---
 
