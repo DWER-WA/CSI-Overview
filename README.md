@@ -1,6 +1,6 @@
 # Western Australia Climate Science Initiative (WA CSI)
 
-The Western Australia Climate Science Initiative (WA CSI) is a Western Australian Government program to produce high-resolution climate projections for the state. It builds on partnerships with NSW DCCEEW, Murdoch University, and the Pawsey Supercomputing Research Centre to deliver dynamically downscaled projections at 4 km resolution, based on CMIP6 global models and aligned with efforts like NARCliM2.0.
+The [Western Australia Climate Science Initiative (WA CSI)] (https://www.wa.gov.au/organisation/department-of-water-and-environmental-regulation/climate-science-initiative-and-wa-climate-projections) is a Western Australian Government program to produce high-resolution climate projections for the state. It builds on partnerships with NSW DCCEEW, Murdoch University, and the Pawsey Supercomputing Research Centre to deliver dynamically downscaled projections at 4 km resolution, based on CMIP6 global models and aligned with efforts like NARCliM2.0.
 
 CSI develops detailed, WA-specific climate change projections to help government, industry, and communities understand and plan for future climate risks, extremes, and impacts. This GitHub repository contains support materials, documentation, evaluation details, or related resources for WA CSI climate projections.
 
