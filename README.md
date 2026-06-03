@@ -24,7 +24,7 @@ For general information and frequently asked questions, see the official WA CSI 
 | Property | Details |
 |---|---|
 | **Timescale** | Daily and monthly |
-| **Spatial domain** | Southwest Western Australia |
+| **Spatial domain** | Southwest Western Australia (SWWA): (109.62°,-37.07°)(124.35°,-27.49°) in rotated pole grid (south west and north east corner) |
 | **Horizontal resolution** | ~4 km (convection-permitting) |
 | **Regional climate model** | WRF (Weather Research and Forecasting) |
 | **Driving data** | CMIP6 GCMs (ACCESS-ESM1-5, EC-Earth3-Veg, MPI-ESM1-2-HR, NorESM2-MM and UKESM1-0-LL|
@@ -161,7 +161,7 @@ The full directory structure is:
 | `domain_id` | `SWWA-04` | Southwest Western Australia at 4 km resolution |
 | `institution_id` | `DWER-MU` | Dept. of Water and Environmental Regulation & Murdoch University |
 | `driving_source_id` | `ACCESS-ESM1-5`, `EC-Earth3-Veg`, `MPI-ESM1-2-HR`, `NorESM2-MM`, `UKESM1-0-LL` | Driving GCM |
-| `driving_experiment_id` | `historical`, `ssp126`, `ssp370` | Historical (1960–2014); SSP1-2.6 and SSP3-7.0 (2015–2100) |
+| `driving_experiment_id` | `historical`, `ssp126`, `ssp245`, `ssp370` | Historical (1960–2014); SSP1-2.6, SSP2-4.5 and SSP3-7.0 (2015–2100) |
 | `driving_variant_label` | `r6i1p1f1`, `r1i1p1f1`, `r1i1p1f2` | See model ensemble table above |
 | `source_id` | `CSI-WRF412R3`, `CSI-WRF412R5` | The two WRF RCM configurations |
 | `version_realisation` | `v1-r1` | Version and realisation of the simulation |
